@@ -24,6 +24,9 @@ const DeleteButton = () => {
   const handleUserDelete = () => {
     setCheckOpen(false);
     setAlertOpen(true);
+    setTimeout(() => {
+      setAlertOpen(false);
+    }, 3000);
   };
 
   return (
@@ -69,9 +72,9 @@ const DeleteButton = () => {
           id="alert-dialog-title"
           sx={{ textAlign: 'center', padding: '16px 24px 0 24px' }}
         >
-          <div className="alert">
-            <img src="./alert.png" alt="" className="alert" />
-            <p>確定要執行刪除會員資料的動作嗎？</p>
+          <div className="flex flex-col justify-center items-center gap-y-4">
+            <img src="./alert.png" alt="" className="h-20 w-20" />
+            <p className="mb-4">確定要執行刪除會員資料的動作嗎？</p>
           </div>
         </DialogTitle>
         <DialogActions sx={{ width: 244 }}>
